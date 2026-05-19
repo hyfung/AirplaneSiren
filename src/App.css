@@ -1,0 +1,133 @@
+body {
+  overflow: hidden;
+  display: block !important;
+}
+
+#root {
+  height: 100vh;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.7rem 1.5rem;
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.05em;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.panels {
+  display: flex;
+  gap: 1.5rem;
+  flex: 1;
+  min-height: 0;
+}
+
+/* Boeing: natural height, does not stretch to fill panels height */
+.panel-boeing {
+  flex: 0 0 auto;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Airbus: stretches to fill full remaining height */
+.panel-airbus {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.section-heading {
+  margin: 0 0 0.45rem;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #a0b4cc;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.25rem;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.sound-grid {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.sound-grid-boeing {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.sound-grid-airbus {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  flex: 1;
+  min-height: 0;
+}
+
+.sound-card {
+  display: flex;
+  min-height: 0;
+}
+
+.sound-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.15rem;
+  padding: 0.3rem 0.25rem;
+  font-size: 0.68rem;
+  font-weight: 600;
+  border: 2px solid #444;
+  border-left: 4px solid #444;
+  border-radius: 7px;
+  background: #1a1a2e;
+  color: #e0e0e0;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  min-height: 0;
+  text-align: center;
+  overflow: hidden;
+  word-break: break-word;
+  line-height: 1.25;
+}
+
+.sound-btn:hover {
+  background: #16213e;
+  border-color: #888;
+}
+
+.sound-btn:active {
+  transform: scale(0.97);
+}
+
+.sound-btn.playing {
+  border-color: #f0a500 !important;
+  background: #2a1f00;
+  color: #f0c040;
+}
+
+.sound-icon {
+  font-size: 0.95rem;
+}
+
+/* Category color strips on left border */
+.cat-warning { border-left-color: #ef4444; }
+.cat-ap      { border-left-color: #f59e0b; }
+.cat-comm    { border-left-color: #8b5cf6; }
+.cat-tcas    { border-left-color: #3b82f6; }
+.cat-weather { border-left-color: #10b981; }
+.cat-other   { border-left-color: #6b7280; }
